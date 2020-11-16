@@ -8,6 +8,6 @@ public class AddTwoNumbersTest {
 	
 	@Test
 	public void testAdd() {
-		assertEquals(AddTwoNumbers.add(2, 3), 4);
+		assertEquals(AddTwoNumbers.add(2, 3), 5);
 	}
 }
