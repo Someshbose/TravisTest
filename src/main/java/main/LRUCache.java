@@ -50,7 +50,7 @@ public class LRUCache {
     }
 
     public void add(int key, int value){
-        if (hashMap.size()==capacity){
+        if (hashMap.size() == capacity){
             Node node = removeFromHead();
             hashMap.remove(node.getKey());
         }
@@ -86,19 +86,27 @@ public class LRUCache {
 
     private void remove(Node node){
         Node temp= head;
-        while (temp!=null){
-            if (node.getKey() == temp.getKey()){
-                Node pre = temp.getPreNode();
-                Node post = temp.getPostNode();
-                pre.setPostNode(post);
-                break;
+
+        if(head.getKey() == node.getKey()){
+            head = head.getPostNode();
+            head.setPreNode(null);
+        }
+        else {
+            while (temp != null) {
+                if (node.getKey() == temp.getKey()) {
+                    Node pre = temp.getPreNode();
+                    Node post = temp.getPostNode();
+                    pre.setPostNode(post);
+                    break;
+                }
             }
         }
     }
 
     private void set(Node node){
         if (head == null){
-            head=end=node;
+            head= node;
+            end = node;
         }
         else{
             end.setPostNode(node);
@@ -111,8 +119,10 @@ public class LRUCache {
     public static void main(String[] args) {
         LRUCache cache = new LRUCache(2);
         cache.add(1,10);
+        System.out.println("Add successful");
         cache.add(5,12);
         System.out.println(cache.get(5));
+        System.out.println("fetch successful");
         System.out.println(cache.get(1));
         System.out.println(cache.get(10));
         cache.add(6,14);
