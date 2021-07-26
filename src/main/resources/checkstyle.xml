@@ -57,9 +57,9 @@
     <module name="EqualsHashCode"/>
     <module name="IllegalInstantiation"/>
     <module name="InnerAssignment"/>
-    <module name="MagicNumber">
-      <property name="ignoreAnnotation" value="true"/>
-    </module>
+<!--    <module name="MagicNumber">-->
+<!--      <property name="ignoreAnnotation" value="true"/>-->
+<!--    </module>-->
     <module name="MissingSwitchDefault"/>
     <module name="SimplifyBooleanExpression"/>
     <module name="SimplifyBooleanReturn"/>
@@ -70,11 +70,11 @@
     <module name="ArrayTypeStyle"/>
     <module name="TodoComment"/>
     <module name="UpperEll"/>
-    <module name="Regexp">
-      <property name="format" value="System\.out\.println"/>
-      <property name="illegalPattern" value="true"/>
-      <property name="ignoreComments" value="true"/>
-    </module>
+<!--    <module name="Regexp">-->
+<!--      <property name="format" value="System\.out\.println"/>-->
+<!--      <property name="illegalPattern" value="true"/>-->
+<!--      <property name="ignoreComments" value="true"/>-->
+<!--    </module>-->
     <module name="Regexp">
       <property name="format" value="printStackTrace"/>
       <property name="illegalPattern" value="true"/>
